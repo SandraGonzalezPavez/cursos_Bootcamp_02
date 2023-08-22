@@ -54,8 +54,8 @@ const addUserBootcamp = async (req, res) => {
             });
             return;
         }
-        await curso.addUsuario(usuario);
-        console.log(` El Usuario ${JSON.stringify(usuario, null, 4)} ha sido agregado al Bootcamp ${JSON.stringify(curso, null, 4)}`);
+        await curso.addUsuario(User);
+        console.log(` El Usuario ${JSON.stringify(usuarioId, null, 4)} ha sido agregado al Bootcamp ${JSON.stringify(curso, null, 4)}`);
         return curso;
     } catch (error) {
         console.log(error);

@@ -116,7 +116,7 @@ const actualizarUsuario = async (req, res) => {
 }
 const borrarUsuario = async (req, res) => {
     try {
-        const id = req.paramas.id;
+        const id = req.params.id;
         const borrados = await usuario.destroy({
             where: { id }
         });
