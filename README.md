@@ -110,6 +110,44 @@ body:
     "password": "mateo123456"
 }
 
+-- Agregar los usuarios a los Bootcamp:
+method:POST
+url : http://localhost:3000/api/bootcamp/addusuario
+BODY:
+{
+ "bootcampId" : 1,
+    "usuarioId" : 1
+    }
+url : http://localhost:3000/api/bootcamp/addusuario
+BODY:
+{
+ "bootcampId" : 1,
+    "usuarioId" : 2
+    }
+    url : http://localhost:3000/api/bootcamp/addusuario
+BODY:
+{
+ "bootcampId" : 2,
+    "usuarioId" : 1
+    }
+    url : http://localhost:3000/api/bootcamp/addusuario
+BODY:
+{
+ "bootcampId" : 3,
+    "usuarioId" : 1
+    }
+    url : http://localhost:3000/api/bootcamp/addusuario
+BODY:
+{
+ "bootcampId" : 3,
+    "usuarioId" : 2
+    }
+    url : http://localhost:3000/api/bootcamp/addusuario
+BODY:
+{
+ "bootcampId" : 3,
+    "usuarioId" : 3
+    }
 ● Listar todos los usuarios con sus bootcamp:
 method: GET
 http://localhost:3000/api/usuario
