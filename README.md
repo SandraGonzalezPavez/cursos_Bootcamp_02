@@ -24,8 +24,10 @@ Para la construcción de la API debe contener los siguientes funcionalidades:
 • La consulta de los bootcamp es pública.
 
 --Crear los siguientes usuarios:
+
 METHOD: POST
 url: http://localhost:3000/api/signup
+
 En el body:
 {
  "firstName": "Mateo",
@@ -41,16 +43,20 @@ En el body:
     "lastName": "Mejias",
     "email": "santiago.mejias@correo.com",
     "password": "santiago123456" 
-}METHOD: POST
+}
+METHOD: POST
 http://localhost:3000/api/signup
+
 En el body:
 {
  "firstName": "Lucas",
     "lastName": "Rojas",
     "email": "lucas.rojas@correo.com",
     "password": "lucas123456" 
-}METHOD: POST
+}
+METHOD: POST
 http://localhost:3000/api/signup
+
 En el body:
 {
  "firstName": "Facundo",
