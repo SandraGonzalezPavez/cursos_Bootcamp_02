@@ -161,6 +161,7 @@ method: PUT
 http://localhost:3000/api/usuario/1
 
 ● Eliminar un usuario por id:
+http://localhost:3000/api/usuario/1
 
 ● Consultando el bootcamp por id, incluyendo los usuarios registrados:
 method: GET
