@@ -93,21 +93,47 @@ body:
 
 Realizar las siguientes consultas con Postman:
 ● Iniciar sesión de un usuario con email y contraseña:
+method: POST
+url: http://localhost:3000/api/signin
+body:
+{
+    "email": "sandra.gonzalez@correo.com",
+    "password": "sandryta"
+}
 
 ● Iniciar sesión de un usuario con email y contraseña, con usuario registrado:
+Method:POST
+url: http://localhost:3000/api/signin
+body:
+{
+"email": "mateo.diaz@correo.com",
+    "password": "mateo123456"
+}
 
 ● Listar todos los usuarios con sus bootcamp:
+method: GET
+http://localhost:3000/api/usuario
 
 ● Listar el usuario con el id 3:
+method: GET
+http://localhost:3000/api/usuario/3
 
 ● Actualizar el usuario según su id:
+method: PUT
+http://localhost:3000/api/usuario/1
 
 ● Eliminar un usuario por id:
 
 ● Consultando el bootcamp por id, incluyendo los usuarios registrados:
+method: GET
+http://localhost:3000/api/bootcamp/3
 
 ● Listar todos los bootcamp con sus usuarios:
+method: GET
+http://localhost:3000/api/bootcamp
 
 ● Consultar un usuario por id incluyendo los bootcamp:
+method: GET
+http://localhost:3000/api/usuario/2
 
 ● Gestione adecuadamente el manejo de errores
