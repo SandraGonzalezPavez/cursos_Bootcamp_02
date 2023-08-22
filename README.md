@@ -186,5 +186,5 @@ Realizar las siguientes consultas con Postman:
 ● Consultando el bootcamp por id, incluyendo los usuarios registrados:
 ● Listar todos los bootcamp con sus usuarios:
 ● Consultar un usuario por id incluyendo los bootcamp:
-● Gestione adecuadamente el manejo de errores
+● Gestione adecuadamente el manejo de errores.
 
