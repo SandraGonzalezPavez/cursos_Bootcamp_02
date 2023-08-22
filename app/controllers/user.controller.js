@@ -5,20 +5,6 @@ const {
 const bcrypt = require('bcryptjs');
 
 
-const createUsuario = async (usuario) => {
-    try {
-        const user = await usuario.create({
-            firstName: Usuario.firstName,
-            lastName: Usuario.lastName,
-            email: Usuario.email
-        });
-        console.log(`Se ha creado el usuario ${JSON.stringify(user, null, 4)}`);
-        return user;
-    } catch (error) {
-        console.error(error);
-        throw error;
-    }
-}
 
 const findUsuarioPorId = async (req, res) => {
     try {
@@ -99,7 +85,7 @@ const actualizarUsuario = async (req, res) => {
                 (usuarioAct.password !== encryptedPassword)) {
                 actualizados = await usuario.update({
                     firstName: usuario.firstName,
-                    lastName: usuarior.lastName,
+                    lastName: usuario.lastName,
                     email: usuario.email,
                     password: encryptedPassword
                 }, {
@@ -107,7 +93,7 @@ const actualizarUsuario = async (req, res) => {
                 });
                 actualizado = actualizados[0];
                 console.log(`actualizados: ${actualizados}`);
-                console.log(`Se ha actualizado el usuario con id ${user.id}`);
+                console.log(`Se ha actualizado el usuario con id ${id}`);
             } else {
                 actualizado = -1;
             }
@@ -116,12 +102,12 @@ const actualizarUsuario = async (req, res) => {
         }
         if (!actualizado) {
             res.status(404).json({
-                message: `proyecto id ${id} no fue encontrado`
+                message: `Usuario id ${id} no fue encontrado`
             });
             return;
         }
         res.status(201).json({
-            message: `proyecto id ${id} fue actualizado con éxito`
+            message: `Usuario id ${id} fue actualizado con éxito`
         });
     } catch (error) {
         console.error(error);

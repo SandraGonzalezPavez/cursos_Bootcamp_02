@@ -9,13 +9,16 @@ const jwt = require('jsonwebtoken');
 const util = require('util');
 const sign = util.promisify(jwt.sign);
 const { 
-    verifySingUp,
+    verifySignUp,
     verifyToken 
 } = require('./app/middleware');
 const cors = require('cors');
 PORT = process.env.PORT;
-
-app.use('/api/usuario', verifyToken);
+var corsOpt = {
+    origin: '*', 
+    optionsSuccessStatus: 200  
+}
+app.use(cors(corsOpt));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -24,7 +27,7 @@ app.use('/api/usuario', userRouter);
 app.use('/api/bootcamp', bootcampRouter);
 
 
-app.post('/api/signup', verifySingUp, async (req, res) => {
+app.post('/api/signup', verifySignUp, async (req, res) => {
     try {
         const {
             firstName,
@@ -73,7 +76,7 @@ app.post('/api/signin', async (req, res) => {
             res.status(400).json({ message: 'Todos los datos son requeridos, email y password' });
             return;
         }
-        const user = await User.findOne({
+        const user = await usuario.findOne({
             where: {
                 email
             }
@@ -87,7 +90,7 @@ app.post('/api/signin', async (req, res) => {
                 },
                 process.env.TOKEN_KEY, 
                 {
-                    expiresIn: "2m",
+                    expiresIn: "10m",
                 }
             );
             console.log("Usuario: " + email + "\nToken: " + token);

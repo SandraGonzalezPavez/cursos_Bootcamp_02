@@ -38,15 +38,15 @@ const addUserBootcamp = async (req, res) => {
             usuarioId
         } = req.body;
         const curso = await bootcamp.findByPk(bootcampId);
-        if (!proyecto) {
-            console.log(`No se encontró proyecto con id ${bootcampId}`);
+        if (!curso) {
+            console.log(`No se encontró Bootcamp con id ${bootcampId}`);
             res.status(404).json({
-                message: `No se encontró proyecto con id ${bootcampId}`
+                message: `No se encontró Bootcamp con id ${bootcampId}`
             });
             return;
         }
         console.log('curso:', curso);
-        const User = await Usuario.findByPk(usuarioId);
+        const User = await usuario.findByPk(usuarioId);
         if (!User) {
             console.log(`No se encontró usuario con id ${usuarioId}`);
             res.status(404).json({
@@ -55,7 +55,7 @@ const addUserBootcamp = async (req, res) => {
             return;
         }
         await curso.addUsuario(usuario);
-        console.log(` El Usuario ${JSON.stringify(Usuario, null, 4)} ha sido agregado al Bootcamp ${JSON.stringify(curso, null, 4)}`);
+        console.log(` El Usuario ${JSON.stringify(usuario, null, 4)} ha sido agregado al Bootcamp ${JSON.stringify(curso, null, 4)}`);
         return curso;
     } catch (error) {
         console.log(error);

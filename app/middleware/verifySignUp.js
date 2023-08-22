@@ -1,6 +1,6 @@
 const { usuario } = require('../models');
 
-const verifySingUp = async (req, res, next) => {
+const verifySignUp = async (req, res, next) => {
     try {
         const {
             firstName,
@@ -45,4 +45,4 @@ const verifySingUp = async (req, res, next) => {
     }
 }
 
-module.exports = verifySingUp;
+module.exports = verifySignUp;

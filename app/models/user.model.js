@@ -41,6 +41,18 @@ const usuario = sequelize.define('usuario', {
                 msg: 'Debe ingresar un email'
             }
         }
+    },
+    password: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+            notNull: {
+                msg: 'El password es requerido'
+            },
+            notEmpty: {
+                msg: 'Debe ingresar un password'
+            }
+        }
     }
 });
 
